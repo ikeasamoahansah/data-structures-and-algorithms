@@ -1,4 +1,3 @@
-import math
 # Implementing linear search
 
 # def linear_search(a:list, target:int):
@@ -25,7 +24,7 @@ def binary_search(a:list, target:int):
     index_high = len(a) - 1
 
     while index_low <= index_high:
-        index_mid = math.floor((index_low+index_high)/2)
+        index_mid = (index_low + index_high) // 2
         if a[index_mid] == target:
             return index_mid
         if a[index_mid] < target:
