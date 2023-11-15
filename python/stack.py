@@ -1,21 +1,28 @@
-import array as arr
+class Node:
+    
+    def __init__(self, d):
+        self.data = d
+        self.prev = None
+
 
 class Stack:
+    def __init__(self):
+        self.head = Node
+
+    def peek(self):
+        return self.head.data
     
-    def __init__(self, array_size, array, top=-1) -> None:
-        self.array_size = array_size
-        self.top = top
-        self.array = array
+    def push(self, item):
+        new_node = Node(d=item)
+        if self.head:
+            new_node.prev = self.head
+            self.head = new_node
+            return self.head.data
+        self.head = new_node
 
-
-def push(s : Stack, value):
-    if s.top == s.array_size - 1:
-        print("Exceeded")
-    s.top = s.top + 1
-    s.array[s.top] = value
-    return s.array
-
-a = arr.array('i', [1, 4, 5])
-
-s = Stack(array_size=7, array=a)
-print(push(s=s, value=7))
+    def pop(self):
+        if self.head:
+            head = self.head
+            self.head = head.prev
+            return head.data
+        return None
