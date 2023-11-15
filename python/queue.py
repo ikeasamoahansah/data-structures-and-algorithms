@@ -12,10 +12,19 @@ class Queue:
         self.tail = Node
 
     def peek(self):
-        pass
+        return self.head.data
 
-    def enqueue(self):
-        pass
+    def enqueue(self, item):
+        new_node = Node(item)
+        if self.tail:
+            self.tail.next = new_node
+            self.tail = new_node
+            return self.tail.data
+        self.head = self.tail = new_node
 
     def dequeue(self):
-        pass
+        if self.head:
+            head = self.head
+            self.head = head.next
+            return head.data
+        return None
