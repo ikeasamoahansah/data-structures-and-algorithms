@@ -1,20 +1,23 @@
 import java.util.*;
 
 class Heap{
-    
-    int[] arr = {};
+    int[] arr;
     int arr_size = arr.length;
     int last_index;
+
+    Heap(int[] arr, int arr_size, int last_index){
+    }
+
+    void HeapInsert(Heap heap, int value){
+        if(this.last_index == this.arr_size - 1){
+            this.arr_size * 2;
+        }
+        this.last_index = this.last_index + 1;
+        this.arr[this.last_index] = value;
+        HeapifyUp(heap);
+    }
 }
 
-void HeapInsert(Heap heap, int value){
-    if(heap.last_index == heap.arr_size - 1){
-        heap.arr_size * 2;
-    }
-    heap.last_index = heap.last_index + 1;
-    heap.arr[heap.last_index] = value;
-    HeapifyUp(heap);
-}
 
 Object HeapRemoveMax(Heap heap){
     if (heap.last_index == 0){
