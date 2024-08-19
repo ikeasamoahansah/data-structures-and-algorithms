@@ -5,4 +5,4 @@ My DSA Journey with Python, Java, C++ and JavaScript
 
 ## Algorithms
 
-1. Search
+1. Binary Search
